@@ -44,8 +44,8 @@
 				var actualWidth = $tip[0].offsetWidth,
 					actualHeight = $tip[0].offsetHeight,
 					gravity = maybeCall(this.options.gravity, this.$element[0]),
-					dataClass = this.$element.attr('data-jrf-tooltip-class'),
-					dataGravity = this.$element.attr('data-jrf-tooltip-gravity');
+					dataClass = this.$element.attr(this.options.dataClass),
+					dataGravity = this.$element.attr(this.options.dataGravity);
 
 				if (dataClass) this.options.className = dataClass;
 				if (dataGravity) gravity = dataGravity;
@@ -218,7 +218,9 @@
 		offset: 0,
 		opacity: 0.8,
 		title: 'title',
-		trigger: 'hover'
+		trigger: 'hover',
+		dataGravity: 'data-tooltip-gravity',
+		dataClass: 'data-tooltip-class'
 	};
 
 	$.fn.tipsy.revalidate = function() {

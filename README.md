@@ -1,50 +1,27 @@
-# tipsy
+# tipsy - *Forked and Customized*
 
 Facebook-style tooltip plugin for jQuery
 
-(c) 2008-2010 Jason Frame (jason@onehackoranother.com)
+## This Fork of tipsy
 
-Released under The MIT License.
+This forked version of [tipsy](https://github.com/jaz303/tipsy/tree/master) adds some functionality needed by a friend of mine. Namely:
 
-## Description:
+* Custom show/hide functions
+* The ability to add a custom class to individual tooltips based on a data attribute
+* The ability to set gravity via a data attribute
 
-tipsy is a simple jQuery plugin for generating Facebook-style tooltips.
+For documentation on how to use tipsy, please see [the original repo](https://github.com/jaz303/tipsy/tree/master).
 
-It's used by Twitter, Github, Slideshare and Bitbucket, amongst others.
+### Data Attributes
 
-## Homepage:
+* To add a `custom class` via a data attribute, add the class name to an attribute on the element called `data-tooltip-class`
+* To set `gravity` via a data attribute, set the value to an attribute on the element called `data-tooltip-gravity`
 
-http://onehackoranother.com/projects/jquery/tipsy
+You can change the names of the data attributes in the options object when calling tipsy (showing defaults):
 
-## Source:
-
-Hosted at GitHub; browse at:
-
-  http://github.com/jaz303/tipsy/tree/master
-
-Or clone from:
-
-    git://github.com/jaz303/tipsy.git
-
-## Usage:
-
-1. Copy the contents of src/{images,javascripts,stylesheets} to the corresponding asset directories in your project. 
-   If the relative path of your images directory from your stylesheets   directory is not "../images", you'll need to adjust tipsy.css appropriately.
-
-2. Insert the neccesary elements in your document's `<head>` section, e.g.:
-   
-        <script type='text/javascript' src='/javascripts/jquery.tipsy.js'></script>
-        <link rel="stylesheet" href="/stylesheets/tipsy.css" type="text/css" />
-
- Remember to include jquery.tipsy.js *after* including the main jQuery library.
-
-3. Initialise Tipsy in your document.onload, e.g.:
-
-        <script type='text/javascript'>
-         $(function() {
-	       $('a[rel=tipsy]').tipsy({fade: true, gravity: 'n'});
-	     });
-        </script>
-
-Please refer to the docs directory for more examples and documentation.
-
+```javascript
+$('a').tipsy({
+	dataGravity: 'data-tooltip-gravity',
+	dataClass: 'data-tooltip-class'
+});
+```
