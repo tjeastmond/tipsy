@@ -86,7 +86,7 @@
 				if (this.options.fade && !this.options.show) {
 					$tip.stop().css({opacity: 0, display: 'block', visibility: 'visible'}).animate({opacity: this.options.opacity});
 				} else if (typeof this.options.show === 'function') {
-					this.options.show($tip, this.options);
+					this.options.show($tip, this.options, this);
 				} else {
 					$tip.css({visibility: 'visible', opacity: this.options.opacity});
 				}
@@ -97,7 +97,7 @@
 			if (this.options.fade && !this.options.hide) {
 				this.tip().stop().fadeOut(function() { $(this).remove(); });
 			} else if (typeof this.options.hide === 'function') {
-				this.options.hide(this.tip(), this.options);
+				this.options.hide(this.tip(), this.options, this);
 			} else {
 				this.tip().remove();
 			}
