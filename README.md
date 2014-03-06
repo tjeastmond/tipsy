@@ -32,8 +32,8 @@ You can set custom show and hide functions by passing them into the options obje
 
 ```javascript
 $('a').tipsy({
-	show: function($tip, options, tipsy) {},
-	hide: function($tip, options, tipsy) {}
+	show: function($tip, options, tipsy) { ... },
+	hide: function($tip, options, tipsy) { ... }
 });
 ```
 
